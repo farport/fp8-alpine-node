@@ -1,7 +1,6 @@
 # fp8-alpine-node
 
-The objective of this docker file is to be used by gitlab runner.  It's a simple
-extension of node:8.12-alpine that create a yarn cache directory.
+Simple extension of `node:8.12-alpine` that sets and exposes yarn cache directory.
 
 ## Docker Sample Command
 
