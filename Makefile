@@ -10,6 +10,7 @@
 
 PROJ_DIR             := $(shell pwd)
 DATA_DIR             := $(PROJ_DIR)/data
+SSH_DIR              := $(PROJ_DIR)/ssh
 DOCKER_INST_NAME     := fp8-alpine-node
 DOCKER_IMAGE         := farport/$(DOCKER_INST_NAME)
 DOCKER_IMAGE_VERSION := 8.14.0
@@ -51,7 +52,10 @@ setup : init $(DOCKER_BUILD_CHECK)
 connect : setup
 ifeq ($(DOCKER_INST_ID),)
 	@echo "### Running docker image"
-	@docker run -v $(DATA_DIR)/yarn/:/var/cache/yarn/ --name $(DOCKER_INST_NAME) -it $(DOCKER_IMAGE_NAME) /bin/sh
+	@docker run \
+		-v $(DATA_DIR)/yarn/:/var/cache/yarn/ \
+		-v $(SSH_DIR):/root/.ssh \
+		--name $(DOCKER_INST_NAME) -it $(DOCKER_IMAGE_NAME) /bin/sh
 else
 	@echo "### Staring docker image"
 	@docker start -i $(DOCKER_INST_ID)

@@ -3,9 +3,15 @@ FROM node:8.14.0-alpine
 
 MAINTAINER Marcos Lin <marcos.lin@farport.co>
 
+ADD bin/execs.sh /bin
+
 RUN apk update \
-    && apk add --no-cache make gcc g++ git python \
+    && apk add --no-cache make gcc g++ git python openssh-client \
+    && mkdir /root/.ssh \
+    && chmod 600 /root/.ssh \
+    && mkdir /proj/ \
     && mkdir -p /var/data/yarn/ \
+    && chmod 755 /bin/execs.sh \
     && yarn config set cache-folder /var/cache/yarn/
 
-VOLUME ["/var/cache/yarn/"]
+VOLUME ["/proj", "/root/.ssh", "/var/cache/yarn/"]

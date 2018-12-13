@@ -29,6 +29,7 @@ Where `n` is the build number of `fp8-alpine-node` project.
    requires python.  The dependecies are `make gcc g++ python`  
 1. `git`: some packages has git based dependencies so `git` is needs to be added to make
    those packages work.  E.g.: [websocket:1.0.28](https://github.com/theturtle32/WebSocket-Node/blob/v1.0.28/package.json)  
+1. `openssh-client`: This is needed when git based dependency is set as ssh path
 
 ## Docker Sample Command
 
