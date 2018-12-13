@@ -1,17 +1,27 @@
 # fp8-alpine-node
 
-Simple extension of `node:8.12-alpine` that sets and exposes yarn cache directory.
+Simple extension of `node:X.Y.Z-alpine` that sets and exposes yarn cache directory.
 
-## Relase History
+## Version
 
-##### 0.1.0 [2018-10-29]
-* First version as simple wrapper for `node:8.12-alpine`
+#### Version: 8.14.0
 
-##### 0.2.0 [2018-10-29]
-* Added `git` dependecy needed by `web3` package
+* Base Image:   `node:8.14.0-alpine`
+* Yarn Version: `1.12.3`
 
-##### 0.3.0 [2018-10-29]
-* Added `python` dependencies 
+### Version Convention
+
+The objective of this docker image is to pair the version of node and yarn.  As result,
+the tag used will be based on the version of alpine image used.  Assuming that `node:X.Y.Z-alpine`
+is used as based image, the version for this docker image will be:
+
+* `fp8-alpine-node:X.Y.n`
+
+Where `n` is the build number of `fp8-alpine-node` project.
+
+#### Source of Version
+
+* GAE: https://cloud.google.com/appengine/docs/standard/nodejs/release-notes
 
 ## Additiona Dependencies
 
