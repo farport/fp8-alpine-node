@@ -52,7 +52,7 @@ setup : init $(DOCKER_BUILD_CHECK)
 connect : setup
 ifeq ($(DOCKER_INST_ID),)
 	@echo "### Running docker image"
-	@docker run \
+	@docker run --rm \
 		-v $(DATA_DIR)/yarn/:/var/cache/yarn/ \
 		-v $(SSH_DIR):/root/.ssh \
 		--name $(DOCKER_INST_NAME) -it $(DOCKER_IMAGE_NAME) /bin/sh

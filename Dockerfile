@@ -9,9 +9,11 @@ RUN apk update \
     && apk add --no-cache make gcc g++ git python openssh-client \
     && mkdir /root/.ssh \
     && chmod 600 /root/.ssh \
-    && mkdir /proj/ \
+    && mkdir /shared \
+    && mkdir /config \
+    && mkdir /proj \
     && mkdir -p /var/data/yarn/ \
     && chmod 755 /bin/execs.sh \
     && yarn config set cache-folder /var/cache/yarn/
 
-VOLUME ["/proj", "/root/.ssh", "/var/cache/yarn/"]
+VOLUME ["/shared", "/var/cache/yarn/"]
