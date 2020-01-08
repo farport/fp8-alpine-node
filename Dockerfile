@@ -1,7 +1,7 @@
-FROM node:8.14.0-alpine
-# node:8.14.0-alpine includes a yarn version 1.12.3
+FROM node:10.15.3-alpine
+# node:10.15.3-alpine includes a yarn version 1.13.0
 
-MAINTAINER Marcos Lin <marcos.lin@farport.co>
+LABEL maintainer="Marcos Lin <marcos.lin@farport.co>"
 
 ADD bin/execs.sh /bin
 

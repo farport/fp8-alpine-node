@@ -2,7 +2,12 @@
 
 Simple extension of `node:X.Y.Z-alpine` that sets and exposes yarn cache directory.
 
-## Version
+## Versions
+
+#### Version: 10.15.0
+
+* Base Image:   `node:10.15.3-alpine`
+* Yarn Version: `1.13.0`
 
 #### Version: 8.14.0
 

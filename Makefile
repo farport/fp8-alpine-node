@@ -13,7 +13,7 @@ DATA_DIR             := $(PROJ_DIR)/data
 SSH_DIR              := $(PROJ_DIR)/ssh
 DOCKER_INST_NAME     := fp8-alpine-node
 DOCKER_IMAGE         := farport/$(DOCKER_INST_NAME)
-DOCKER_IMAGE_VERSION := 8.14.0
+DOCKER_IMAGE_VERSION := 10.15.0
 DOCKER_IMAGE_NAME    := $(DOCKER_IMAGE):$(DOCKER_IMAGE_VERSION)
 DOCKER_BUILD_CHECK   := $(DATA_DIR)/docker$(DOCKER_IMAGE_VERSION).built
 DOCKER_INST_ID       = $(shell docker ps -aqf"name=$(DOCKER_INST_NAME)")

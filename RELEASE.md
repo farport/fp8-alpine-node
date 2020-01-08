@@ -1,5 +1,9 @@
 ## Relase History
 
+### 10.15.0 [2018-12-13]
+* Updated image to `10.15.3-alpine`, matching nodejs version in Firebase Functions
+* tags: 10.15.0; 10.15
+
 ### 8.14.0 [2018-12-13]
 * Updated image to `8.14.0-alpine`, matching nodejs version in Google App Engine
 * Added `openssh-client` dependency
