@@ -1,7 +1,9 @@
 FROM node:10.15.3-alpine
 # node:10.15.3-alpine includes a yarn version 1.13.0
 
-LABEL maintainer="Marcos Lin <marcos.lin@farport.co>"
+LABEL maintainer="Marcos Lin <marcos.lin@farport.co>" \
+	"app.fp8.docker.version.node"="10.15.3" \
+	"app.fp8.docker.version.yarn"="1.13.0"
 
 ADD bin/execs.sh /bin
 
