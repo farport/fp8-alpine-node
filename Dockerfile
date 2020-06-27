@@ -1,14 +1,14 @@
-FROM node:10.15.3-alpine
-# node:10.15.3-alpine includes a yarn version 1.13.0
+FROM node:10.21.0-alpine3.11
+# node:10.21.0-alpine includes a yarn version 1.22.4
 
 LABEL maintainer="Marcos Lin <marcos.lin@farport.co>" \
-	"app.fp8.docker.version.node"="10.15.3" \
-	"app.fp8.docker.version.yarn"="1.13.0"
+	"app.fp8.docker.version.node"="10.21.0" \
+	"app.fp8.docker.version.yarn"="1.22.4"
 
 ADD bin/execs.sh /bin
 
 RUN apk update \
-    && apk add --no-cache make gcc g++ git python openssh-client \
+    && apk add --no-cache make gcc g++ git python openssh-client rsync \
     && mkdir /root/.ssh \
     && chmod 600 /root/.ssh \
     && mkdir /shared \
